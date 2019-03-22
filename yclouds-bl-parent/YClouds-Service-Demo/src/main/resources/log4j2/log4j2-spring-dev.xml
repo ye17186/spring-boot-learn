@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" monitorInterval="30">
+
+  <Properties>
+    <!-- 日志文件保存目录 -->
+    <Property name="LOG_HOME">./logs</Property>
+    <!-- 控制台日志格式（带颜色） -->
+    <Property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n%xwEx</Property>
+    <!-- 普通日志格式 -->
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${sys:PID} --- [%15.15t] %-40.40c{1.} : %m%n%xwEx</Property>
+  </Properties>
+
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>
+    </Console>
+
+    <!-- 每天生成一个日志文件 -->
+    <RollingFile name="dailyLog" fileName="${LOG_HOME}/yclouds.log" filePattern="${LOG_HOME}/yclouds-%d{yyyy-MM-dd}.log">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1" />
+      </Policies>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Root level="warn">
+      <!-- 输出到控制台 -->
+      <AppenderRef ref="console"/>
+      <!-- 输出到文件 -->
+      <!--<AppenderRef ref="dailyLog"/>-->
+    </Root>
+    <!-- 指定包com.yclouds日志级别为debug，其余包日志级别用Root的warn -->
+    <logger name="com.yclouds" level="debug"/>
+  </Loggers>
+</configuration>

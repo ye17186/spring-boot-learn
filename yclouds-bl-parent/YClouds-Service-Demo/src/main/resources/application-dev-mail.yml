@@ -1,0 +1,6 @@
+# 开发环境邮件服务配置
+spring:
+  mail:
+    host: smtp.163.com
+    username: ye17186@163.com
+    password: your-password
