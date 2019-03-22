@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>yclouds-common-core</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <name>YClouds-Common-Core</name>
   <description>YClouds系列工程公共核心包</description>
 
