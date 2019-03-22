@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/3/22 13:50
  */
 @YRestController("/hello")

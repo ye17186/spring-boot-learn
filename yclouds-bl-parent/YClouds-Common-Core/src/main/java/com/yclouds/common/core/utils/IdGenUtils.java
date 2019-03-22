@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * ID生成器
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/3/22 15:16
  */
 public class IdGenUtils {
