@@ -19,9 +19,17 @@ public class IdGenUtils {
     private static final int DAY_LEN = 3;
     private static final String TIME_FORMAT = "HHmmss";
     private static final int SEQ_LEN = 5;
-    private static final int maxSeq = 99999;
+
+    /**
+     * 最大seq数量
+     */
+    public static final int maxSeq = (int) Math.pow(10, SEQ_LEN);
 
     private static AtomicLong currentSeq = new AtomicLong(1);
+
+    public static void main(String[] args) {
+        System.out.println(maxSeq);
+    }
 
     /**
      * 基于内存生成唯一ID
