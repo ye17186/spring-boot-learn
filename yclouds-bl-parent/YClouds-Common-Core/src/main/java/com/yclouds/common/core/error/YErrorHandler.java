@@ -2,7 +2,7 @@ package com.yclouds.common.core.error;
 
 import com.yclouds.common.core.web.YRestController;
 import com.yclouds.common.core.error.code.BaseError;
-import com.yclouds.common.core.error.code.StatusError;
+import com.yclouds.common.core.error.code.HttpError;
 import com.yclouds.common.core.response.ApiResp;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +39,7 @@ public class YErrorHandler implements ErrorController {
 
     @RequestMapping(value = ERROR_PATH)
     @ResponseBody
-    public ApiResp<StatusError> error(HttpServletRequest request,
+    public ApiResp<HttpError> error(HttpServletRequest request,
         HttpServletResponse response) {
 
         WebRequest webRequest = new ServletWebRequest(request);
@@ -54,6 +54,6 @@ public class YErrorHandler implements ErrorController {
 
         return ApiResp
             .retFail(BaseError.SYSTEM_EXCEPTION.getCode(), BaseError.SYSTEM_EXCEPTION.getMsg(),
-                new StatusError(status, path, msg));
+                new HttpError(status, path, msg));
     }
 }

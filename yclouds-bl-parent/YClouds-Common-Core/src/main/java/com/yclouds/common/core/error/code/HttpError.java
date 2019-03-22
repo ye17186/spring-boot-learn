@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class StatusError extends ApiRespData {
+public class HttpError extends ApiRespData {
 
     private static final long serialVersionUID = 795000378131425885L;
 

@@ -13,7 +13,7 @@ public class HelloController {
 
     @GetMapping("/say")
     public ApiResp<String> sayHello() {
-        return ApiResp.retOK("Hello World!");
+        return ApiResp.retOK("hello world!");
     }
 
 }
