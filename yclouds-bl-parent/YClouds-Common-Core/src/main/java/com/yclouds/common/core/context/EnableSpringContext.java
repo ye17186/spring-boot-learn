@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 /**
  * 启用Spring Context自动初始化程序
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/3/22 16:49
  */
 @Target(ElementType.TYPE)

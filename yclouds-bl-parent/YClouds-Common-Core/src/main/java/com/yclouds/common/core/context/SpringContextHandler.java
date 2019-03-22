@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContextAware;
  * <br>
  * 具体获取Bean操作，还是依赖SpringUtils
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/3/22 16:44
  * @see SpringUtils
  */

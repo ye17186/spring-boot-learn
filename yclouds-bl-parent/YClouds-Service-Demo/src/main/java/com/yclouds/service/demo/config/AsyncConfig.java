@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2018/8/21 18:31
  */
 @Slf4j
