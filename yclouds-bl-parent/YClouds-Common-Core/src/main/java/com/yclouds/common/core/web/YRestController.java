@@ -1,4 +1,4 @@
-package com.yclouds.common.core.annotation;
+package com.yclouds.common.core.web;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

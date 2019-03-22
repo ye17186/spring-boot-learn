@@ -1,6 +1,6 @@
 package com.yclouds.service.demo.modules.hello.controller;
 
-import com.yclouds.common.core.annotation.YRestController;
+import com.yclouds.common.core.web.YRestController;
 import com.yclouds.common.core.response.ApiResp;
 import org.springframework.web.bind.annotation.GetMapping;
 

@@ -1,6 +1,6 @@
 package com.yclouds.common.core.error;
 
-import com.yclouds.common.core.annotation.YRestController;
+import com.yclouds.common.core.web.YRestController;
 import com.yclouds.common.core.error.code.BaseError;
 import com.yclouds.common.core.error.code.StatusError;
 import com.yclouds.common.core.response.ApiResp;
