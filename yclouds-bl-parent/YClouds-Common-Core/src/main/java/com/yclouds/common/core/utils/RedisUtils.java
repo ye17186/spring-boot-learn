@@ -235,13 +235,48 @@ public class RedisUtils {
         return redisTemplate.opsForList().range(key, start, end);
     }
 
+    /**
+     * 加锁
+     *
+     * @param key 锁名
+     * @param timeout 超时时间，单位：秒
+     * @return true：加锁成功；false：加锁失败
+     */
     public static boolean lock(final String key, final long timeout) {
         Boolean ret = redisTemplate.opsForValue()
             .setIfAbsent(REDIS_LOCK_PREFIX + key, key, timeout, TimeUnit.SECONDS);
         return ret != null && ret;
     }
 
+    /**
+     * 解锁
+     *
+     * @param key 锁名
+     * @return true：解锁成功；false：解锁失败
+     */
     public static boolean unlock(final String key) {
         return del(REDIS_LOCK_PREFIX + key);
+    }
+
+    /**
+     * 自增
+     *
+     * @param key Redis键
+     * @return 自增后的值
+     */
+    public static long increment(final String key) {
+        Long counter = redisTemplate.opsForValue().increment(key);
+        return counter == null ? 0 : counter;
+    }
+
+    /**
+     * 自增
+     *
+     * @param key Redis键
+     * @return 自增后的值
+     */
+    public static long increment(final String key, final long step) {
+        Long counter = redisTemplate.opsForValue().increment(key, step);
+        return counter == null ? 0 : counter;
     }
 }

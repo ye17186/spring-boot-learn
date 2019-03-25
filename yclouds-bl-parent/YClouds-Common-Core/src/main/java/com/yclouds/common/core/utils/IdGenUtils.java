@@ -1,8 +1,9 @@
 package com.yclouds.common.core.utils;
 
+import com.yclouds.common.core.sequence.MemorySeqCounter;
+import com.yclouds.common.core.sequence.RedisSeqCounter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * ID生成器
@@ -25,26 +26,37 @@ public class IdGenUtils {
      */
     public static final int maxSeq = (int) Math.pow(10, SEQ_LEN);
 
-    private static AtomicLong currentSeq = new AtomicLong(1);
-
-    public static void main(String[] args) {
-        System.out.println(maxSeq);
-    }
-
     /**
      * 基于内存生成唯一ID
-     * <br>
-     * 1-2位：年份；3-5：年中第N天；6-11：时分秒：12-16：序列号
-     * 支持每秒钟生成最多生成99999个ID
      *
      * @return 全局唯一ID
      */
     public static long nextIdByMem() {
 
-        long seq = currentSeq.getAndIncrement();
-        if(seq > maxSeq) {
-            currentSeq.set(1);
-        }
+        long seq = MemorySeqCounter.nextSeq();
+        return convert(seq);
+    }
+
+    /**
+     * 基于Redis生成唯一ID
+     *
+     * @return 全局唯一ID
+     */
+    public static long nextIdByRedis() {
+        long seq = RedisSeqCounter.nextSeq();
+        return convert(seq);
+    }
+
+    /**
+     * SEQ转ID
+     * <br>
+     * ID格式：1-2位：年份；3-5：年中第N天；6-11：时分秒：12-16：序列号 支持每秒钟生成最多生成99999个ID
+     *
+     * @param seq 源Seq
+     * @return 系统ID
+     */
+    private static long convert(long seq) {
+
         LocalDateTime now = LocalDateTime.now();
 
         String year = StringUtils.right(String.valueOf(now.getYear()), YEAR_LEN);
@@ -54,5 +66,4 @@ public class IdGenUtils {
 
         return Long.valueOf(year + day + time + seqStr);
     }
-
 }

@@ -1,6 +1,7 @@
 package com.yclouds.service.demo.modules.hello.controller;
 
 import com.yclouds.common.core.response.ApiResp;
+import com.yclouds.common.core.utils.IdGenUtils;
 import com.yclouds.common.core.web.YRestController;
 import com.yclouds.service.demo.modules.hello.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
@@ -52,5 +53,20 @@ public class HelloController {
         log.info("end... duration: {}", System.currentTimeMillis() - start);
 
         return ApiResp.retOK(hello);
+    }
+
+    @GetMapping("/say3")
+    public ApiResp<String> sayHello3() {
+
+        System.out.println(IdGenUtils.nextIdByMem());
+
+        return ApiResp.retOK(hello);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 100000; i++) {
+            System.out.println(IdGenUtils.nextIdByMem());
+        }
+
     }
 }
