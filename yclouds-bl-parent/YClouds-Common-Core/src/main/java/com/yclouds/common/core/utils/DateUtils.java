@@ -133,4 +133,23 @@ public class DateUtils {
     public static LocalDateTime endOfDay8(LocalDate localDate) {
         return LocalDateTime.of(localDate, LocalTime.MAX);
     }
+
+    /**
+     * 获取当前时间字符串
+     *
+     * @return yyyy-MM-dd HH:mm:ss时间字符串
+     */
+    public static String now() {
+        return format(LocalDateTime.now());
+    }
+
+    /**
+     * 获取当前时间指定格式的时间字符串
+     *
+     * @param pattern 时间格式
+     * @return 指定格式时间字符串
+     */
+    public static String now(String pattern) {
+        return format(LocalDateTime.now(), pattern);
+    }
 }

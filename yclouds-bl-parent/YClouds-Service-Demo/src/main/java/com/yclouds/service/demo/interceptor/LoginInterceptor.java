@@ -1,22 +1,25 @@
 package com.yclouds.service.demo.interceptor;
 
 import com.yclouds.common.core.error.code.BaseError;
+import com.yclouds.common.core.interceptor.BaseInterceptor;
 import com.yclouds.common.core.response.ApiResp;
+import com.yclouds.common.core.utils.DateUtils;
 import com.yclouds.common.core.utils.JsonUtils;
 import com.yclouds.common.core.utils.StringUtils;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.cors.CorsUtils;
-import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
  * 登录拦截器
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/3/26 14:49
  */
-public class LoginInterceptor implements HandlerInterceptor {
+@Slf4j
+public class LoginInterceptor extends BaseInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
@@ -38,23 +41,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             ApiResp resp = ApiResp.retFail(BaseError.SYSTEM_NO_LOGIN);
             write(request, response, JsonUtils.toJson(resp));
         }
+
+        log.info("[LoginInterceptor] result: {}, uri: {}, time: {}, token: {}", flg,
+            request.getRequestURI(), DateUtils.now(), token);
         return flg;
-    }
-
-    /**
-     * 通过response返回错误信息给前端
-     *
-     * @param request 请求
-     * @param response 响应
-     * @param content 响应内容
-     */
-    private void write(HttpServletRequest request, HttpServletResponse response, String content)
-        throws IOException {
-
-        String origin = request.getHeader("Origin");
-        response.setHeader("Access-Control-Allow-Origin", origin);
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json; charset=utf-8");
-        response.getWriter().write(content);
     }
 }
