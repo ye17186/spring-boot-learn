@@ -14,6 +14,7 @@ public enum BaseError {
     SYSTEM_EXCEPTION(10001, "系统异常，请联系管理员"),
     SYSTEM_REQUEST_METHOD_NOT_SUPPORTED(10002, "请求方法不支持"),
     SYSTEM_ARGUMENT_NOT_VALID(10003, "参数校验失败"),
+    SYSTEM_NO_LOGIN(10104, "用户未登录"),
     SERVICE_ERROR(10101, "服务暂不可用，请稍后重试"),
     SERVICE_DOWN(10102, "服务[${serviceId}]暂不可用，请稍后重试");
 

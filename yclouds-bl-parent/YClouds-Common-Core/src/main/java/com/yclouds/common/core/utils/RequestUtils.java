@@ -78,7 +78,6 @@ public class RequestUtils {
             XFor = request.getRemoteAddr();
         }
         return XFor;
-
     }
 
 }

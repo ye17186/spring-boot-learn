@@ -1,6 +1,5 @@
 package com.yclouds.service.demo.filter;
 
-import com.yclouds.common.core.constant.RequestAttrConst;
 import com.yclouds.common.core.utils.IdGenUtils;
 import com.yclouds.common.core.utils.RequestUtils;
 import java.io.IOException;
@@ -39,8 +38,8 @@ public class ApiAccessFilter implements Filter {
         Long requestId = IdGenUtils.nextIdByMem(); // 请求ID
         long start = System.currentTimeMillis(); // 请求进入时间
 
-        request.setAttribute(RequestAttrConst.REQUEST_ID, requestId);
-        request.setAttribute(RequestAttrConst.REQUEST_START_TIME, start);
+        // request.setAttribute(RequestAttrConst.REQUEST_ID, requestId);
+        // request.setAttribute(RequestAttrConst.REQUEST_START_TIME, start);
 
         log.info("[Api Access] start. id: {}, uri: {}, method: {}, client: {}", requestId,
             request.getRequestURI(), request.getMethod(), RequestUtils.getIP(request));
