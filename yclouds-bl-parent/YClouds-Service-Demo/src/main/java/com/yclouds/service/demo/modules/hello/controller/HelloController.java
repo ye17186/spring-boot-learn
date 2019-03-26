@@ -54,19 +54,4 @@ public class HelloController {
 
         return ApiResp.retOK(hello);
     }
-
-    @GetMapping("/say3")
-    public ApiResp<String> sayHello3() {
-
-        System.out.println(IdGenUtils.nextIdByMem());
-
-        return ApiResp.retOK(hello);
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 100000; i++) {
-            System.out.println(IdGenUtils.nextIdByMem());
-        }
-
-    }
 }
