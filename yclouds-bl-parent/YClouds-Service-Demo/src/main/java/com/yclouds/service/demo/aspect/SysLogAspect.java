@@ -23,6 +23,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 /**
+ * 系统日志切面处理
+ *
  * @author ye17186
  * @version 2019/3/26 16:22
  */
