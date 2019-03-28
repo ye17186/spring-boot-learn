@@ -54,8 +54,8 @@ public class ApiResp<T> implements Serializable {
     /**
      * 无data的正常返回
      */
-    public static ApiResp<String> retOK() {
-        return retOK("");
+    public static ApiResp retOK() {
+        return new ApiResp();
     }
 
     /**
@@ -80,7 +80,7 @@ public class ApiResp<T> implements Serializable {
         return response;
     }
 
-    public static <T extends ApiRespData> ApiResp<List<T>> retOK(List<T> data) {
+    public static <T> ApiResp<List<T>> retOK(List<T> data) {
         ApiResp<List<T>> response = new ApiResp<>();
         response.setData(data);
         return response;

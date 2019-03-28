@@ -15,4 +15,9 @@ public interface HelloService {
      * 异步say hello
      */
     void sayHelloAsync();
+
+    /**
+     * 测试SysLogPoint在service层的作用
+     */
+    void sayHello6();
 }

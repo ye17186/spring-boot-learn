@@ -1,5 +1,7 @@
 package com.yclouds.service.demo.modules.hello.service.impl;
 
+import com.yclouds.common.core.aspect.SysLogPoint;
+import com.yclouds.common.core.aspect.SysLogTarget;
 import com.yclouds.service.demo.modules.hello.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -29,5 +31,11 @@ public class HelloServiceImpl implements HelloService {
     @Async
     public void sayHelloAsync() {
         sayHello();
+    }
+
+    @Override
+    @SysLogPoint(actionName = "sayHello6", target = SysLogTarget.SERVICE)
+    public void sayHello6() {
+        log.info("业务处理6: sayHello6");
     }
 }

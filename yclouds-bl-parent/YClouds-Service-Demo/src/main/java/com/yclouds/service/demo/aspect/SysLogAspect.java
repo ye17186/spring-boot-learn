@@ -61,12 +61,6 @@ public class SysLogAspect {
         saveLog(sysLog);
     }
 
-    private void saveLog(SysLogModel sysLog) {
-
-        // 本例中直接打印日志，生产环境中可采用异步的方式，保存到DB等媒介中
-        log.info("[SysLog]: {}", JsonUtils.toJson(sysLog));
-    }
-
     /**
      * 构建日志对象
      *
@@ -90,6 +84,17 @@ public class SysLogAspect {
         return sysLog;
     }
 
+    /**
+     * 保存日志
+     *
+     * @param sysLog 日志对象
+     */
+    private void saveLog(SysLogModel sysLog) {
+
+        // 本例中直接打印日志，生产环境中可采用异步的方式，保存到DB等媒介中
+        log.info("[SysLog]: {}", JsonUtils.toJson(sysLog));
+    }
+
 
     /**
      * 处理输入参数
@@ -104,7 +109,7 @@ public class SysLogAspect {
         ObjectMapper om = new ObjectMapper();
         if (!ObjectUtils.isEmpty(args)) {
             for (int i = 0; i < args.length; i++) {
-                if (!ObjectUtils.isEmpty(sensitiveParams)) {
+                if (args[i] != null && !ObjectUtils.isEmpty(sensitiveParams)) {
                     try {
                         JsonNode root = om.readTree(JsonUtils.toJson(args[i]));
                         handleSensitiveParams(root, sensitiveParams);

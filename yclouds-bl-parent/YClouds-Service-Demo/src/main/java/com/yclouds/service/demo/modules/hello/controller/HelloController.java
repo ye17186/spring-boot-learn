@@ -1,8 +1,8 @@
 package com.yclouds.service.demo.modules.hello.controller;
 
 import com.yclouds.common.core.aspect.SysLogPoint;
-import com.yclouds.common.core.aspect.SysLogTarget;
 import com.yclouds.common.core.response.ApiResp;
+import com.yclouds.common.core.utils.JsonUtils;
 import com.yclouds.common.core.web.YRestController;
 import com.yclouds.service.demo.modules.hello.dto.HelloInDTO;
 import com.yclouds.service.demo.modules.hello.service.HelloService;
@@ -60,28 +60,39 @@ public class HelloController {
     }
 
     /**
-     * 异步say hello
+     * 正常返回的日志记录
      *
-     * @return 内容
+     * @param inDTO 入参
      */
-    @GetMapping("/say3")
-    public ApiResp sayHello3() {
-        log.info("业务处理...");
-        return ApiResp.retOK();
-    }
-
     @SysLogPoint(actionName = "Say4", sensitiveParams = "password")
     @PostMapping("/say4")
     public ApiResp sayHello4(@RequestBody HelloInDTO inDTO) {
-        log.info("业务处理...");
+        log.info("业务处理, args: {}", JsonUtils.toJson(inDTO));
         return ApiResp.retOK();
     }
 
+    /**
+     * 异常返回的日志记录
+     *
+     * @param inDTO 入参
+     */
     @SysLogPoint(actionName = "Say5", sensitiveParams = "password")
     @PostMapping("/say5")
-    public ApiResp sayHello5(@RequestBody HelloInDTO inDTO) {
-        log.info("业务处理...");
-        System.out.println(1 / 0);
+    public ApiResp sayHello5(@RequestBody(required = false) HelloInDTO inDTO) {
+        log.info("业务处理, args: {}", JsonUtils.toJson(inDTO));
+        if (inDTO == null) {
+            throw new RuntimeException("异常测试");
+        }
+        return ApiResp.retOK();
+    }
+
+    /**
+     * Service层的日志记录
+     */
+    @SysLogPoint(actionName = "Say6")
+    @PostMapping("/say6")
+    public ApiResp sayHello6() {
+        helloService.sayHello6();
         return ApiResp.retOK();
     }
 }
