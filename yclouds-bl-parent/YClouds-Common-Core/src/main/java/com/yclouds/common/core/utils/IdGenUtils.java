@@ -4,13 +4,17 @@ import com.yclouds.common.core.sequence.MemorySeqCounter;
 import com.yclouds.common.core.sequence.RedisSeqCounter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * ID生成器
+ * <br>序列号利用AtomicLong来生成，保证毫秒内不重复
+ * <br>此ID生成器不保证ID的绝对递增，但可以保证趋势递增（因为高位依赖于时间）
  *
  * @author ye17186
  * @version 2019/3/22 15:16
  */
+@Slf4j
 public class IdGenUtils {
 
     private IdGenUtils() {
@@ -18,8 +22,8 @@ public class IdGenUtils {
 
     private static final int YEAR_LEN = 2;
     private static final int DAY_LEN = 3;
-    private static final String TIME_FORMAT = "HHmmss";
-    private static final int SEQ_LEN = 5;
+    private static final String TIME_FORMAT = "HHmmssSSS";
+    private static final int SEQ_LEN = 4;
 
     /**
      * 最大seq数量
@@ -50,7 +54,7 @@ public class IdGenUtils {
     /**
      * SEQ转ID
      * <br>
-     * ID格式：1-2位：年份；3-5：年中第N天；6-11：时分秒：12-16：序列号 支持每秒钟生成最多生成99999个ID
+     * 随机数利用AtomicLong来实现， ID格式：1-2位：年份；3-5：年中第N天；6-14：HHmmssSSS：15-18：自增随机数
      *
      * @param seq 源Seq
      * @return 系统ID

@@ -2,6 +2,7 @@ package com.yclouds.common.core.sequence;
 
 import com.yclouds.common.core.utils.IdGenUtils;
 import java.util.concurrent.atomic.AtomicLong;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 基于内存的Seq计数工厂
@@ -9,7 +10,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * @author ye17186
  * @version 2019/3/22 17:12
  */
-@SuppressWarnings("unused")
 public class MemorySeqCounter extends SeqCounter {
 
     /**
@@ -34,7 +34,7 @@ public class MemorySeqCounter extends SeqCounter {
      * @return 新ID数组
      */
     public static long[] nextSeq(int size) {
-        long maxSeq = currentSeq.getAndAdd(size);
+        long maxSeq = currentSeq.addAndGet(size);
         return nextSeq(maxSeq, maxSeq - size);
     }
 }
