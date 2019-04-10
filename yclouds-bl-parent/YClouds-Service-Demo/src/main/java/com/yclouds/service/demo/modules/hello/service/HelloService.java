@@ -20,4 +20,6 @@ public interface HelloService {
      * 测试SysLogPoint在service层的作用
      */
     void sayHello6();
+
+    void sayHello7();
 }

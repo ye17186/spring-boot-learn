@@ -95,4 +95,14 @@ public class HelloController {
         helloService.sayHello6();
         return ApiResp.retOK();
     }
+
+    /**
+     * 测试CountDownLatch功能
+     */
+    @SysLogPoint(actionName = "Say7")
+    @PostMapping("/say7")
+    public ApiResp sayHello7() {
+        helloService.sayHello7();
+        return ApiResp.retOK();
+    }
 }
