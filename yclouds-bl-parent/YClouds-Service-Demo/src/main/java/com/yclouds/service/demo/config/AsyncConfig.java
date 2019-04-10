@@ -1,6 +1,5 @@
 package com.yclouds.service.demo.config;
 
-import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -36,23 +35,14 @@ public class AsyncConfig implements AsyncConfigurer {
 
     /**
      * 异常处理器
+     * <br>异步方法返回类型为void时，会走此异常处理
+     * <br>而返回类型为Future时，在get结果时，会抛出ExecutionException异常
      *
      * @see org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler
      */
     @Override
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
-        return new AsyncExceptionHandler();
-    }
-
-    /**
-     * 自定义异常处理
-     */
-    private class AsyncExceptionHandler implements AsyncUncaughtExceptionHandler {
-
-        @Override
-        public void handleUncaughtException(Throwable throwable, Method method, Object... objects) {
-
-            log.error("Unexpected exception occurred invoking async method: " + method, throwable);
-        }
+        return (throwable, method, objects) -> log
+            .error("Unexpected exception occurred invoking async method : {}", method, throwable);
     }
 }
