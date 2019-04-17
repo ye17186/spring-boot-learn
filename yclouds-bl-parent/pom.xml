@@ -18,6 +18,11 @@
   <description>Spring Boot学习系列All-In-One项目父工程，只用于jar包管理</description>
   <packaging>pom</packaging>
 
+  <modules>
+    <module>yclouds-common-core</module>
+    <module>yclouds-service-demo</module>
+  </modules>
+
   <properties>
     <java.version>1.8</java.version>
     <pagehelper.version>1.2.10</pagehelper.version>
