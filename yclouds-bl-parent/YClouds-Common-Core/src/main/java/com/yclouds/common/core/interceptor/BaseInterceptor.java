@@ -1,8 +1,10 @@
 package com.yclouds.common.core.interceptor;
 
+import com.google.common.base.Charsets;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -24,9 +26,9 @@ public class BaseInterceptor implements HandlerInterceptor {
     protected void write(HttpServletRequest request, HttpServletResponse response, String content)
         throws IOException {
 
-        String origin = request.getHeader("Origin");
-        response.setHeader("Access-Control-Allow-Origin", origin);
-        response.setCharacterEncoding("UTF-8");
+        response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,
+            request.getHeader(HttpHeaders.ORIGIN));
+        response.setCharacterEncoding(Charsets.UTF_8.name());
         response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         response.getWriter().write(content);
     }
