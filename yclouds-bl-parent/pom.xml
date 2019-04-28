@@ -26,8 +26,9 @@
   <properties>
     <java.version>1.8</java.version>
     <pagehelper.version>1.2.10</pagehelper.version>
-    <druid.version>1.1.10</druid.version>
-    <guava.version>24.0-jre</guava.version>
+    <druid.version>1.1.14</druid.version>
+    <guava.version>27.1-jre</guava.version>
+    <rocketmq.version>4.5.0</rocketmq.version>
   </properties>
 
   <dependencies>
@@ -62,6 +63,12 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.rocketmq</groupId>
+        <artifactId>rocketmq-client</artifactId>
+        <version>${rocketmq.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

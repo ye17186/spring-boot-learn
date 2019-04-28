@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: yclouds-service-mq
+rocketmq:
+  nameSrvAddr: 127.0.0.1:9876
+  producer:
+    groupName: ${spring.application.name}
+  consumer:
+    one:
+      groupName: ${spring.application.name}-one
+      topic: 'topic-one'
+    two:
+      groupName: ${spring.application.name}-two
+      topic: 'topic-two'
