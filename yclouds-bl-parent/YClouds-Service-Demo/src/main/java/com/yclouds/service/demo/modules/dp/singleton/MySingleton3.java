@@ -5,7 +5,7 @@ package com.yclouds.service.demo.modules.dp.singleton;
  * <br>优点：实现了懒加载，在使用的时候才去实例化
  * <br>确定：线程不安全，假设2个线程同时调用getInstance()，并且都走到if(instance == null)，此情况下，两个线程都会去实例化
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/17 13:49
  */
 public class MySingleton3 {

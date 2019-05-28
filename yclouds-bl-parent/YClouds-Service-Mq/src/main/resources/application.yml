@@ -1,6 +1,10 @@
 spring:
   application:
     name: yclouds-service-mq
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5s
 rocketmq:
   nameSrvAddr: 127.0.0.1:9876
   producer:
@@ -12,3 +16,12 @@ rocketmq:
     two:
       groupName: ${spring.application.name}-two
       topic: 'topic-two'
+
+myhelper:
+  plugins:
+    token:
+      enabled: true
+      secret-key: helloWorld
+      valid-duration: 3600
+    advice:
+      enabled: false

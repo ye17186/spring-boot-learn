@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/26 16:15
  */
 @Slf4j
-@Component
+// @Component
 public class JmsUtils {
 
     private JmsUtils() {

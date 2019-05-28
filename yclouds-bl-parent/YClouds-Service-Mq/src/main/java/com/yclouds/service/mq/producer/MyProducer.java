@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 /**
  * 消息生产者One
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/26 15:30
  */
 @Slf4j
-@Component
+// @Component
 public class MyProducer implements IProducer {
 
 

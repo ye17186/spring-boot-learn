@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/9 15:12
  */
 public interface SubHelloService {

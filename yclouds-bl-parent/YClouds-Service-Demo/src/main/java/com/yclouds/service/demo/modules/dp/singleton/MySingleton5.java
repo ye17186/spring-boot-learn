@@ -5,7 +5,7 @@ package com.yclouds.service.demo.modules.dp.singleton;
  *
  * <br>既实现了懒加载，通过同步及双重检查，实现了线程安全，效率较高
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/17 13:58
  */
 public class MySingleton5 {

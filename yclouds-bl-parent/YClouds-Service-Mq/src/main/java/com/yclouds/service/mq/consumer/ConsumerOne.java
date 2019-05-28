@@ -13,11 +13,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/26 15:48
  */
 @Slf4j
-@Component
+// @Component
 public class ConsumerOne {
 
     @Value("${rocketmq.nameSrvAddr}")

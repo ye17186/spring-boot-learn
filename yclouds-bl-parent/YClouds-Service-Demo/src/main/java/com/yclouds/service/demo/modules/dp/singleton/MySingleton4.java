@@ -6,7 +6,7 @@ package com.yclouds.service.demo.modules.dp.singleton;
  * <br>优点：实现了懒加载，在使用的时候才去实例化
  * <br>缺点：getInstance()方法时同步的，虽然避免的线程安全问题，但是同步方法会阻塞，效率太低
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/17 13:54
  */
 public class MySingleton4 {

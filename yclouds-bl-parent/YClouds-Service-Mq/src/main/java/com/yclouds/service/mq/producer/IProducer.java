@@ -4,7 +4,7 @@ import com.google.common.base.Charsets;
 import org.apache.rocketmq.common.message.Message;
 
 /**
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/26 16:43
  */
 public interface IProducer {

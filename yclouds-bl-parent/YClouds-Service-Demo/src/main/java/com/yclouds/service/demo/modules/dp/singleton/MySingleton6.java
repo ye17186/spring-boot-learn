@@ -6,7 +6,7 @@ package com.yclouds.service.demo.modules.dp.singleton;
  * 与饿汉式不同的是，此方式在MySingleton6加载时，并不会为完成示例化，
  * 只有当调用getInstance()方法时，才会去加载MySingleton6Instance类，并且完成instance的实例化
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/4/17 14:03
  */
 public class MySingleton6 {
