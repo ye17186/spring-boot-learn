@@ -3,7 +3,6 @@ package com.yclouds.demo.email;
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 /**
  * com.yclouds.demo.email.SendEmailRequest
