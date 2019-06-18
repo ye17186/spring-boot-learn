@@ -1,6 +1,0 @@
-spring:
-  profiles:
-    include: dev-ds, dev-mail, dev-redis, dev-busi
-
-logging:
-  config: classpath:log4j2/log4j2-spring-dev.xml

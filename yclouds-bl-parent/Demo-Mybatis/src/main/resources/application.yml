@@ -1,0 +1,22 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    # JDBC\u914D\u7F6E
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis:
+  # \u6307\u5B9Axml\u4F4D\u7F6E
+  mapper-locations: classpath*:mappings/*.xml
+  configuration:
+    # \u81EA\u52A8\u4E0B\u5212\u7EBF\u8F6C\u9A7C\u5CF0
+    map-underscore-to-camel-case: true
+
+#\u5206\u9875\u63D2\u4EF6PageHelper\u914D\u7F6E
+pagehelper:
+  helperDialect: mysql

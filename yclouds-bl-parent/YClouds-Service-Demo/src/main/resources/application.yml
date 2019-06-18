@@ -1,7 +1,0 @@
-spring:
-  profiles:
-    active: dev
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    # 过滤掉null字段
-    default-property-inclusion: non_null
