@@ -15,9 +15,19 @@ import lombok.Setter;
 public class SendEmailRequest implements Serializable {
 
     private static final long serialVersionUID = 865403899378271049L;
+
+    /**
+     * 收件人邮箱
+     */
     private String to;
 
+    /**
+     * 邮件主题
+     */
     private String subject;
 
+    /**
+     * 邮件内容
+     */
     private String content;
 }
