@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 /**
  * com.yclouds.demo.mybatis.service.impl.StudentServiceImpl
  *
- * @author yemeng-lhq
+ * @author ye1718
  * @version 2019/6/18 14:32
  */
 @Service

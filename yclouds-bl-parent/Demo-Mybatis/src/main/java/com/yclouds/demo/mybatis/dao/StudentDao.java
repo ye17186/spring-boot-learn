@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 /**
  * com.yclouds.demo.mybatis.dao.StudentDao
  *
- * @author yemeng-lhq
+ * @author ye1718
  * @version 2019/6/18 16:53
  */
 @Repository

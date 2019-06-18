@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * com.yclouds.demo.mybatis.service.StudentService
  *
- * @author yemeng-lhq
+ * @author ye1718
  * @version 2019/6/18 14:32
  */
 public interface StudentService {

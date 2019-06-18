@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * com.yclouds.demo.mybatis.domain.StudentDO
  *
- * @author yemeng-lhq
+ * @author ye1718
  * @version 2019/6/18 16:55
  */
 @Data
