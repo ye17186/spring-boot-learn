@@ -57,7 +57,7 @@ public class EmailServiceImpl implements EmailService {
 
             mailSender.send(message);
         } catch (MessagingException e) {
-            log.info("HTML的邮件发送异常。", e);
+            log.error("HTML的邮件发送异常。", e);
         }
     }
 
@@ -77,7 +77,7 @@ public class EmailServiceImpl implements EmailService {
 
             mailSender.send(message);
         } catch (MessagingException e) {
-            log.info("带附件的邮件发送异常。", e);
+            log.error("带附件的邮件发送异常。", e);
         }
 
     }
