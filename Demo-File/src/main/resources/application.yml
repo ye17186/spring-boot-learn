@@ -1,0 +1,10 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+file:
+  # 文件保存的服务器路径
+  save-path: D:\upload
+  # 访问文件的url前缀
+  url-prefix: http://127.0.0.1
+
