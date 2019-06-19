@@ -8,7 +8,10 @@ Spring Boot 版本 2.1.2.RELEASE
 【在线DEMO】[http://47.92.254.223/a](http://47.92.254.223/a)
 
 # Demo-Email
-SpringBoot发送邮件Demo
+SpringBoot发送邮件的Demo
 
 # Demo-Mybatis
-SpringBoot集成Mybatis
+SpringBoot集成Mybatis的Demo
+
+# Demo-File
+SpringBoot 文件上传与下载的Demo
