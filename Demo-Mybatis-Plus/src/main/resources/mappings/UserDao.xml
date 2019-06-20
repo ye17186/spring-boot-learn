@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yclouds.demo.mybatisplus.dao.UserDao">
+  <select id="selectPageByDiy1"
+    resultType="com.yclouds.demo.mybatisplus.entity.UserEntity">
+    select * from tb_user
+    <where>
+      <if test="param.geAge != null">
+        age &gt;= #{param.geAge,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+  <select id="selectPageByDiy2" resultType="com.yclouds.demo.mybatisplus.entity.UserEntity">
+    select * from tb_user
+    <where>
+      <if test="geAge != null">
+        and age &gt;= #{geAge,jdbcType=INTEGER}
+      </if>
+      <if test="deleted != null">
+        and deleted = #{deleted,jdbcType=BOOLEAN}
+      </if>
+    </where>
+  </select>
+  <select id="selectPageByDiy3"
+    resultType="com.yclouds.demo.mybatisplus.entity.UserEntity">
+    select * from tb_user
+    <where>
+      <if test="geAge != null">
+        and age &gt;= #{geAge,jdbcType=INTEGER}
+      </if>
+      <if test="deleted != null">
+        and deleted = #{deleted,jdbcType=BOOLEAN}
+      </if>
+    </where>
+  </select>
+  <select id="selectPageByDiy4" resultType="com.yclouds.demo.mybatisplus.model.UserResult">
+    select id as user_id, name, age, email, type from tb_user
+    <where>
+      <if test="geAge != null">
+        and age &gt;= #{geAge,jdbcType=INTEGER}
+      </if>
+      <if test="deleted != null">
+        and deleted = #{deleted,jdbcType=BOOLEAN}
+      </if>
+    </where>
+  </select>
+</mapper>
