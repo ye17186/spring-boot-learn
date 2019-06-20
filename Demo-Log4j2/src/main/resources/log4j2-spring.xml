@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" monitorInterval="30">
+
+  <Properties>
+    <!-- 日志文件保存目录 -->
+    <Property name="LOG_HOME">./logs</Property>
+    <!-- 控制台日志格式（带颜色） -->
+    <Property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{%4.4L:}{magenta} %m%n%rEx
+    </Property>
+    <!-- 普通日志格式 -->
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.15t] %-40.40c{1.} %4.4L: %m%n%rEx
+    </Property>
+  </Properties>
+
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>
+    </Console>
+
+    <!-- 每天生成一个日志文件 -->
+    <RollingFile name="dailyLog" fileName="${LOG_HOME}/demo.log"
+      filePattern="${LOG_HOME}/demo-%d{yyyy-MM-dd}.log">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+      </Policies>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+<!--    <Logger name="com.yclouds" level="info"/>-->
+    <AsyncLogger name="com.yclouds" level="info" includeLocation="false"/>
+    <Root level="info" includeLocation="false">
+      <AppenderRef ref="console"/>
+    </Root>
+  </Loggers>
+</configuration>
