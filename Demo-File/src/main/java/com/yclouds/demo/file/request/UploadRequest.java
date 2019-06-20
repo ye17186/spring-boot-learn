@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * com.yclouds.demo.upload.model.UploadRequest
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 9:03
  */
 @Data

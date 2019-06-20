@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * com.yclouds.demo.upload.controller.FileController
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 8:56
  */
 @Slf4j

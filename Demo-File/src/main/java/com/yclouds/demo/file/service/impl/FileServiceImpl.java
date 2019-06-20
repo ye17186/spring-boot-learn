@@ -26,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * com.yclouds.demo.upload.service.impl.FileServiceImpl
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 10:29
  */
 @Slf4j

@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * com.yclouds.demo.upload.request.DownloadRequest
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 10:54
  */
 @Data

@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * com.yclouds.demo.upload.response.UploadResponse
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 9:34
  */
 @Data

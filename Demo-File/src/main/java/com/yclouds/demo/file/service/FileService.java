@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * com.yclouds.demo.upload.service.FileService
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/19 10:28
  */
 public interface FileService {
