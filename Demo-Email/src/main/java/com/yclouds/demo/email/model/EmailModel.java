@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * com.yclouds.demo.email.model.EmailModel
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/18 21:54
  */
 @Data

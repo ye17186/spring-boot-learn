@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 /**
  * com.yclouds.demo.email.service.impl.EmailServiceImpl
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/18 21:50
  */
 @Slf4j

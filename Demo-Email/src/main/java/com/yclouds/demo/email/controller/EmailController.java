@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * com.yclouds.demo.email.controller.EmailController
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/18 21:52
  */
 @RestController
