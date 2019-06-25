@@ -10,10 +10,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.yclouds</groupId>
-  <artifactId>demo-mybatis-generator</artifactId>
+  <artifactId>demo-schedule</artifactId>
   <version>1.0.0</version>
-  <name>Demo-Mybatis-Generator</name>
-  <description>Demo project for Spring Boot With Generator</description>
+  <name>Demo-Schedule</name>
+  <description>Demo project for Spring Boot With Schedule</description>
 
   <properties>
     <java.version>1.8</java.version>
@@ -22,19 +22,9 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-      <version>2.0.1</version>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
