@@ -13,6 +13,9 @@ SpringBoot 异步调用Demo
 # Demo-Email
 SpringBoot发送邮件的Demo
 
+# Demo-Exception-Handle
+SpringBoot统一异常处理的Demo
+
 # Demo-File
 SpringBoot 文件上传与下载的Demo
 
