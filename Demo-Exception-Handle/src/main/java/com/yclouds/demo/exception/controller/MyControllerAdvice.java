@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * com.yclouds.demo.exception.controller.ControllerAdvice
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/27 10:39
  */
 @Slf4j

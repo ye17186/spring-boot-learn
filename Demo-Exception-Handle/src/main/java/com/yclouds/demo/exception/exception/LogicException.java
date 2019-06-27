@@ -6,7 +6,7 @@ import lombok.Setter;
 /**
  * com.yclouds.demo.exception.exception.LogicException 业务异常
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/6/27 10:42
  */
 @Setter
