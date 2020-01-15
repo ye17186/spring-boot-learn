@@ -4,9 +4,9 @@ Java和Spring Boot学习用系列工程
 
 Spring Boot版本 `2.1.2.RELEASE`
 
-【博客地址】[https://blog.yclouds.top](https://bloy.yclouds.top)
+【博客地址】[https://blog.it-follower.com](https://blog.it-follower.com)
 
-【在线DEMO】[https://demo.yclouds.top](https://demo.yclouds.top)
+【在线DEMO】[https://demo.it-follower.com](https://demo.it-follower.com)
 
 ## Demo-Async
 
